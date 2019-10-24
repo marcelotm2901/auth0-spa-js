@@ -245,6 +245,7 @@ export default class Auth0Client {
     );
 
     if (error) {
+      this.transactionManager.remove(state);
       throw new AuthenticationError(error, error_description, state);
     }
 
